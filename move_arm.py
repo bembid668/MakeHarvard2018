@@ -1,9 +1,9 @@
-import Tkinter
+from tkinter import *
 from pyfirmata import Arduino, Servo
 import tkSimpleDialog
-from Tkinter import IntVar, Button. StringVar, Entry
+from tkinter import IntVar, Button, StringVar, Entry
 from time import sleep
-import sqlite3 as sqlite3
+import sqlite3 as lite
 
 class App:
 
@@ -29,7 +29,7 @@ class App:
         self.servo3o1dVal = 0
         self.servo4o1dVal = 0
 
-        self.root = Tkinter.Tk()
+        self.root = tkinter.Tk()
         self.root.geometry("600x600")
 
         self.servo1Val = IntVar()
@@ -40,35 +40,35 @@ class App:
         self.pointName = StringVar()
 
         # GUI Components
-        servo1_slider = Tkinter.Scale(self.root,
+        servo1_slider = tkinter.Scale(self.root,
                                       label='Servo 1',
                                       length=400,
                                       from_=0, to_=360,
-                                      orient=Tkinter.VERTICAL,
+                                      orient=tkinter.VERTICAL,
                                       variable=self.servo1Val)
         servo1_slider.grid(column=1, row=2)
 
-        servo2_slider = Tkinter.Scale(self.root,
+        servo2_slider = tkinter.Scale(self.root,
                                       label='Servo 2',
                                       length=400,
                                       from_=0, to_=180,
-                                      orient=Tkinter.VERTICAL,
+                                      orient=tkinter.VERTICAL,
                                       variable=self.servo2Val)
         servo2_slider.grid(column=2, row=2)
 
-        servo3_slider = Tkinter.Scale(self.root,
+        servo3_slider = tkinter.Scale(self.root,
                                       label='Servo 3',
                                       length=400,
                                       from_=0, to_=180,
-                                      orient=Tkinter.VERTICAL,
+                                      orient=tkinter.VERTICAL,
                                       variable=self.servo3Val)
         servo3_slider.grid(column=3, row=2)
 
-        servo4_slider = Tkinter.Scale(self.root,
+        servo4_slider = tkinter.Scale(self.root,
                                       label='Servo 4',
                                       length=400,
                                       from_=0, to_=180,
-                                      orient=Tkinter.VERTICAL,
+                                      orient=tkinter.VERTICAL,
                                       variable=self.servo4Val)
         servo4_slider.grid(column=4, row=2)
 
@@ -140,5 +140,5 @@ class App:
 
 
 if __name__=='__main__':
-    port = 'COM7' #tkSimpleDialog(Tkinter.Tk(), 'Port: ')
+    port = 'COM7' 
     ap = App(port, 2, 3, 4, 5)
